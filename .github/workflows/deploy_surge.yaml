@@ -16,7 +16,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: windows
+    runs-on: Ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,8 +28,8 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
-      - name: instal Surge
-        run: npm instal -surge
+      - name: install Surge
+        run: npm install -surge
       - name: Run Surge .
         run: surge ./bootcamp20202020.surge.sh --token ${{secrets.SURGE_TOKEN}}
      
